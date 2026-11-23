@@ -1,0 +1,133 @@
+{
+  "file": "generated/pipeline_v1.py",
+  "ontology_version": "1.0",
+  "passed": 25,
+  "total": 25,
+  "results": [
+    {
+      "check": "SYNTAX",
+      "passed": true,
+      "detail": "code parses"
+    },
+    {
+      "check": "CLASS Agent",
+      "passed": true,
+      "detail": "defined"
+    },
+    {
+      "check": "CLASS Human",
+      "passed": true,
+      "detail": "subclass of Agent"
+    },
+    {
+      "check": "CLASS Zombie",
+      "passed": true,
+      "detail": "subclass of Agent"
+    },
+    {
+      "check": "CLASS World",
+      "passed": true,
+      "detail": "defined"
+    },
+    {
+      "check": "FUNC create_world",
+      "passed": true,
+      "detail": "params ['width', 'height', 'num_humans', 'num_zombies', 'seed']"
+    },
+    {
+      "check": "FUNC step",
+      "passed": true,
+      "detail": "params ['world']"
+    },
+    {
+      "check": "FUNC count",
+      "passed": true,
+      "detail": "params ['world']"
+    },
+    {
+      "check": "PARAM VISION_RADIUS",
+      "passed": true,
+      "detail": "= 100"
+    },
+    {
+      "check": "PARAM TOUCH_DISTANCE",
+      "passed": true,
+      "detail": "= 13"
+    },
+    {
+      "check": "PARAM FIGHT_CHANCE",
+      "passed": true,
+      "detail": "= 0.4"
+    },
+    {
+      "check": "PARAM HUMAN_SPEED_MIN",
+      "passed": true,
+      "detail": "= 0.5"
+    },
+    {
+      "check": "PARAM HUMAN_SPEED_MAX",
+      "passed": true,
+      "detail": "= 1.4"
+    },
+    {
+      "check": "PARAM ZOMBIE_SPEED",
+      "passed": true,
+      "detail": "= 1.5"
+    },
+    {
+      "check": "STDLIB ONLY",
+      "passed": true,
+      "detail": "ok"
+    },
+    {
+      "check": "IMPORT",
+      "passed": true,
+      "detail": "imports cleanly"
+    },
+    {
+      "check": "ATTRIBUTES",
+      "passed": true,
+      "detail": "all present"
+    },
+    {
+      "check": "COUNT RESULT",
+      "passed": true,
+      "detail": "returned (100, 10)"
+    },
+    {
+      "check": "C1",
+      "passed": true,
+      "detail": "ok for 100 steps"
+    },
+    {
+      "check": "C2",
+      "passed": true,
+      "detail": "ok for 100 steps"
+    },
+    {
+      "check": "C3",
+      "passed": true,
+      "detail": "ok for 100 steps"
+    },
+    {
+      "check": "C4",
+      "passed": true,
+      "detail": "ok for 100 steps"
+    },
+    {
+      "check": "C5",
+      "passed": true,
+      "detail": "ok for 100 steps"
+    },
+    {
+      "check": "REL bites",
+      "passed": true,
+      "detail": "(humans, zombies) went from (100, 10) to (54, 28)"
+    },
+    {
+      "check": "C6",
+      "passed": true,
+      "detail": "same seed, same results"
+    }
+  ]
+}
