@@ -1,0 +1,93 @@
+{
+  "file": "generated/naive.py",
+  "ontology_version": "1.0",
+  "passed": 3,
+  "total": 17,
+  "results": [
+    {
+      "check": "SYNTAX",
+      "passed": true,
+      "detail": "code parses"
+    },
+    {
+      "check": "CLASS Agent",
+      "passed": false,
+      "detail": "missing"
+    },
+    {
+      "check": "CLASS Human",
+      "passed": false,
+      "detail": "missing"
+    },
+    {
+      "check": "CLASS Zombie",
+      "passed": false,
+      "detail": "missing"
+    },
+    {
+      "check": "CLASS World",
+      "passed": false,
+      "detail": "missing"
+    },
+    {
+      "check": "FUNC create_world",
+      "passed": false,
+      "detail": "missing"
+    },
+    {
+      "check": "FUNC step",
+      "passed": false,
+      "detail": "missing"
+    },
+    {
+      "check": "FUNC count",
+      "passed": false,
+      "detail": "missing"
+    },
+    {
+      "check": "PARAM VISION_RADIUS",
+      "passed": false,
+      "detail": "= missing, expected 100"
+    },
+    {
+      "check": "PARAM TOUCH_DISTANCE",
+      "passed": false,
+      "detail": "= missing, expected 13"
+    },
+    {
+      "check": "PARAM FIGHT_CHANCE",
+      "passed": false,
+      "detail": "= missing, expected 0.4"
+    },
+    {
+      "check": "PARAM HUMAN_SPEED_MIN",
+      "passed": false,
+      "detail": "= missing, expected 0.5"
+    },
+    {
+      "check": "PARAM HUMAN_SPEED_MAX",
+      "passed": false,
+      "detail": "= missing, expected 1.4"
+    },
+    {
+      "check": "PARAM ZOMBIE_SPEED",
+      "passed": false,
+      "detail": "= missing, expected 1.5"
+    },
+    {
+      "check": "STDLIB ONLY",
+      "passed": true,
+      "detail": "ok"
+    },
+    {
+      "check": "IMPORT",
+      "passed": true,
+      "detail": "imports cleanly"
+    },
+    {
+      "check": "RUNTIME",
+      "passed": false,
+      "detail": "cannot run the constraint checks: interface functions are missing"
+    }
+  ]
+}
