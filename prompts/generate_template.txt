@@ -1,0 +1,20 @@
+You are writing Python code for a zombie simulation.
+The ONTOLOGY below is the official specification. Follow it exactly.
+
+RULES:
+1. Use EXACTLY the class names, attribute names, function names, and
+   parameter names in the ontology. Do not rename anything.
+2. Human and Zombie must be subclasses of Agent.
+3. Define every parameter as a module-level constant with the same
+   name and value (for example: ZOMBIE_SPEED = 1.5).
+4. Implement every relation rule and every constraint (C1 to C6).
+5. In create_world, set world.rng = random.Random(seed), and use ONLY
+   world.rng for randomness, so constraint C6 holds.
+6. Use only the Python standard library. No graphics, no input(),
+   no printing, and no code that runs when the file is imported.
+7. Do not add features that are not in the ontology.
+8. Reply with ONE complete Python file in a single code block,
+   and nothing else.
+
+ONTOLOGY:
+{ontology}

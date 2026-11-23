@@ -1,0 +1,133 @@
+You are writing Python code for a zombie simulation.
+The ONTOLOGY below is the official specification. Follow it exactly.
+
+RULES:
+1. Use EXACTLY the class names, attribute names, function names, and
+   parameter names in the ontology. Do not rename anything.
+2. Human and Zombie must be subclasses of Agent.
+3. Define every parameter as a module-level constant with the same
+   name and value (for example: ZOMBIE_SPEED = 1.5).
+4. Implement every relation rule and every constraint (C1 to C6).
+5. In create_world, set world.rng = random.Random(seed), and use ONLY
+   world.rng for randomness, so constraint C6 holds.
+6. Use only the Python standard library. No graphics, no input(),
+   no printing, and no code that runs when the file is imported.
+7. Do not add features that are not in the ontology.
+8. Reply with ONE complete Python file in a single code block,
+   and nothing else.
+
+ONTOLOGY:
+{
+  "name": "ZombieSimulationOntology",
+  "version": "1.0",
+  "description": "Concepts, relations, rules, and the required code interface for a simplified zombie simulation (no graphics).",
+  "classes": {
+    "Agent": {
+      "parent": null,
+      "description": "Anything that moves in the world.",
+      "attributes": {
+        "id": "int",
+        "x": "float",
+        "y": "float",
+        "speed": "float"
+      }
+    },
+    "Human": {
+      "parent": "Agent",
+      "description": "Moves in a straight line at its own speed and bounces off the walls.",
+      "attributes": {
+        "dx": "float",
+        "dy": "float"
+      }
+    },
+    "Zombie": {
+      "parent": "Agent",
+      "description": "Chases the nearest human it can see.",
+      "attributes": {}
+    },
+    "World": {
+      "parent": null,
+      "description": "Holds the map size, every agent, the frame number, and the random number generator.",
+      "attributes": {
+        "width": "float",
+        "height": "float",
+        "humans": "list[Human]",
+        "zombies": "list[Zombie]",
+        "frame": "int",
+        "rng": "random.Random"
+      }
+    }
+  },
+  "relations": [
+    {
+      "name": "chases",
+      "from": "Zombie",
+      "to": "Human",
+      "rule": "Each step, a zombie moves toward the nearest human within VISION_RADIUS at ZOMBIE_SPEED. If no human is within VISION_RADIUS, the zombie stays still."
+    },
+    {
+      "name": "bites",
+      "from": "Zombie",
+      "to": "Human",
+      "rule": "If a zombie is closer than TOUCH_DISTANCE to a human, they fight. With probability FIGHT_CHANCE the zombie is destroyed. Otherwise the human is removed and a new zombie appears at the human's position. A human can be in at most one fight per step."
+    }
+  ],
+  "parameters": {
+    "VISION_RADIUS": 100,
+    "TOUCH_DISTANCE": 13,
+    "FIGHT_CHANCE": 0.4,
+    "HUMAN_SPEED_MIN": 0.5,
+    "HUMAN_SPEED_MAX": 1.4,
+    "ZOMBIE_SPEED": 1.5
+  },
+  "constraints": [
+    {
+      "id": "C1",
+      "rule": "Every agent stays inside the world: 0 <= x <= width and 0 <= y <= height, after every step."
+    },
+    {
+      "id": "C2",
+      "rule": "Every human is slower than every zombie: each human's speed is between HUMAN_SPEED_MIN and HUMAN_SPEED_MAX, and each zombie's speed is ZOMBIE_SPEED."
+    },
+    {
+      "id": "C3",
+      "rule": "Agent ids are unique, and no id belongs to both a human and a zombie."
+    },
+    {
+      "id": "C4",
+      "rule": "The total number of agents never increases from one step to the next."
+    },
+    {
+      "id": "C5",
+      "rule": "A zombie moves at most ZOMBIE_SPEED per step."
+    },
+    {
+      "id": "C6",
+      "rule": "Two worlds created with the same seed give identical results after the same number of steps."
+    }
+  ],
+  "interface": {
+    "create_world": {
+      "params": [
+        "width",
+        "height",
+        "num_humans",
+        "num_zombies",
+        "seed"
+      ],
+      "returns": "World"
+    },
+    "step": {
+      "params": [
+        "world"
+      ],
+      "returns": "None"
+    },
+    "count": {
+      "params": [
+        "world"
+      ],
+      "returns": "tuple: (number of humans, number of zombies)"
+    }
+  }
+}

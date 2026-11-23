@@ -1,0 +1,3 @@
+Write a Python zombie simulation where zombies chase humans and
+infect them, and humans can sometimes fight back.
+Use only the Python standard library, no graphics.
