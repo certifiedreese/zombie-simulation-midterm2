@@ -1,6 +1,6 @@
 {
   "name": "ZombieSimulationOntology",
-  "version": "1.0",
+  "version": "1.1",
   "description": "Concepts, relations, rules, and the required code interface for a simplified zombie simulation (no graphics).",
 
   "classes": {
@@ -51,7 +51,7 @@
   "parameters": {
     "VISION_RADIUS": 100,
     "TOUCH_DISTANCE": 13,
-    "FIGHT_CHANCE": 0.4,
+    "FIGHT_CHANCE": 0.5,
     "HUMAN_SPEED_MIN": 0.5,
     "HUMAN_SPEED_MAX": 1.4,
     "ZOMBIE_SPEED": 1.5

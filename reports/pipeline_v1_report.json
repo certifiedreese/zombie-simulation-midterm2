@@ -1,7 +1,7 @@
 {
   "file": "generated/pipeline_v1.py",
-  "ontology_version": "1.0",
-  "passed": 25,
+  "ontology_version": "1.1",
+  "passed": 24,
   "total": 25,
   "results": [
     {
@@ -56,8 +56,8 @@
     },
     {
       "check": "PARAM FIGHT_CHANCE",
-      "passed": true,
-      "detail": "= 0.4"
+      "passed": false,
+      "detail": "= 0.4, expected 0.5"
     },
     {
       "check": "PARAM HUMAN_SPEED_MIN",

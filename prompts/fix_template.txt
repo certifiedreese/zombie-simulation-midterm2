@@ -1,0 +1,16 @@
+The Python file below was written from the ontology, but it FAILED
+some automatic checks. Fix ONLY the problems listed. Keep every
+name exactly as in the ontology, and keep following all the rules
+from before.
+
+FAILED CHECKS:
+{failures}
+
+ONTOLOGY:
+{ontology}
+
+CURRENT CODE:
+{code}
+
+Reply with ONE complete, corrected Python file in a single code
+block, and nothing else.
